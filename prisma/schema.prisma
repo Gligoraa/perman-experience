@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  role         String   @default("admin")
+  createdAt    DateTime @default(now())
+}
+
+model Reservation {
+  id          String   @id @default(cuid())
+  clientName  String
+  clientEmail String
+  clientPhone String
+  service     String
+  price       Int      // u centima (npr. 2000 = 20,00 €)
+  date        DateTime
+  status      String   @default("pending") // "pending" | "confirmed" | "completed" | "cancelled"
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

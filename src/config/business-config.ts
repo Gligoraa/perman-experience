@@ -103,7 +103,7 @@ export const businessData: BusinessConfig = {
       specialty: "Master Barber",
       bio: "Nagra\u0111ivani majstor klasi\u010dnog brijanja i preciznog stiliziranja brade.",
       image:
-        "https://images.unsplash.com/photo-1534030347209-c87cd1b7bc2c?auto=format&fit=crop&q=80&w=400",
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400",
     },
     {
       id: "2",
